@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Feature from './Feature';
-import {USCurrencyFormat} from './helpers'
+import { USCurrencyFormat } from './helpers'
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
@@ -45,6 +45,7 @@ class App extends Component {
   render() {
     const features = Object.keys(this.props.features).map((featureName, idx) => (
       <Feature
+        key={idx}
         selectedOptionName={this.state.selected[featureName].name}
         onChange={this.updateFeature}
         idx={idx}

@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
 import { USCurrencyFormat } from './helpers'
+import pt from 'prop-types'
+
 
 class Feature extends Component {
+
+    static propTypes = {
+
+        //feature name
+        name: pt.string.isRequired,
+        
+        //feature options array of {name,cost} objects
+        data: pt.array.isRequired,
+
+        //a function to trigger when an optiion is selected
+        onChange: pt.func.isRequired,
+    }
+
     constructor(props) {
         super(props)
     }
